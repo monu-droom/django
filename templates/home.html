@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Hi There! How are you. I'am {{ name }}</h1>
+<form action="add" method="post">
+    {% csrf_token %}
+    <div class="row text-center">
+        <div class="col">
+            <label for="num1">Number 1</label>
+            <input type="text" name="num1">
+            <label for="num2">Number 2</label>
+            <input type="text" name="num2">
+            <button type="submit">Add</button>
+        </div>
+    </div>
+</form>
+
+{% endblock %}
