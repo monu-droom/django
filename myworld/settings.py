@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'rpc.apps.RpcConfig',
     'blog.apps.BlogConfig',
     'todo.apps.TodoConfig',
     'travello.apps.TravelloConfig',
