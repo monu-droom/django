@@ -1,0 +1,75 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Find Ball</title>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="description" content="Travello template project">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/bootstrap4/bootstrap.min.css' %}">
+<link href="{% static 'plugins/font-awesome-4.7.0/css/font-awesome.min.css' %}" rel="stylesheet" type="text/css">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.carousel.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/owl.theme.default.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'plugins/OwlCarousel2-2.2.1/animate.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/main_styles.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'styles/responsive.css' %}">
+</head>
+<style>
+  .blink {
+    animation: blink 1s steps(1, end) infinite;
+  }
+  
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+<body>
+    <div class="container">
+        <div class="row mt-5">
+          <div class="col-auto">
+            <h3 class="mb-4 blink" style="font-weight: bold; color: black;">Game Sarted . . .</h3>
+            {% for msg in messages %}
+            <h6 class="text-danger">{{msg}}</h6>
+            {% endfor %}
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-auto">
+            <h5>Guess the ball's location : </h5>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-auto">
+            <form id="form_0" action="play" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="choice" value="0">
+              <a href="javascript:{}" onclick="document.getElementById('form_0').submit();" type="submit"><i class="fa fa-glass fa-flip-vertical" style="color: red; font-size: 50px !important;"></i></a>
+            </form>
+          </div>
+          <div class="col-auto">
+            <form id="form_1" action="play" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="choice" value="1">
+              <a href="javascript:{}" onclick="document.getElementById('form_1').submit();" type="submit"><i class="fa fa-glass fa-flip-vertical" style="color: red; font-size: 50px !important;"></i></a>
+            </form>
+          </div>
+          <div class="col-auto">
+            <form id="form_2" action="play" method="POST">
+              {% csrf_token %}
+              <input type="hidden" name="choice" value="2">
+              <a href="javascript:{}" onclick="document.getElementById('form_2').submit();" type="submit"><i class="fa fa-glass fa-flip-vertical" style="color: red; font-size: 50px !important;"></i></a>
+            </form>
+          </div>
+        </div>
+    </div>
+</body>
+</html>
