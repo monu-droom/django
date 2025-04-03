@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'weatherapp.apps.WeatherappConfig',
+    'findball.apps.FindballConfig',
     'rpc.apps.RpcConfig',
     'blog.apps.BlogConfig',
     'todo.apps.TodoConfig',

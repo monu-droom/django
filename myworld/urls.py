@@ -26,6 +26,8 @@ urlpatterns = [
     path('todo/', include('todo.urls')),
     path('blog/', include('blog.urls')),
     path('rpc/', include('rpc.urls')),
+    path('findball/', include('findball.urls')),
+    path('weather/', include('weatherapp.urls')),
 ]
 
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
